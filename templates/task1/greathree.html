@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<h1 class="text-center">Comparison Three Form</h1><br>
+
+<form class="text-center" action="/greaterthree/" method="post">
+  {% csrf_token %}
+    Enter first number : <input type="text"  name="num1"><br><br>
+    Enter second number : <input type="text"  name="num2"><br><br>
+    Enter third number : <input type="text"  name="num3"><br><br>
+  <input type="submit">
+</form>
+<br><br>
+<h3 class="text-center">Result : {{res}}</h3>
+
+{% endblock %}

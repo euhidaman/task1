@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>You are 30 seconds away from joining us!!</p>
+                        <input type="submit" name="" value="Login"/><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Student</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Teacher</a>
+                            </li>
+                        </ul>
+
+
+<!------- Give name to input fields and crate view, to pass the name values -->
+                        <form action="/collegedisplay/" method="post">
+                          {% csrf_token %}
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Admission Form for Students</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Student's Full Name *" name="studentname" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Guardian's Full Name *" name="fathername" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Guardian's Occupation *" name="fatheroccupation" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="Address *" name="address" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" name="higheredu">
+                                                <option class="hidden"  selected disabled>Higher Qualification</option>
+                                                <option value="Intermediate">Intermediate</option>
+                                                <option value="Diploma">Diploma</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <input type="date" class="form-control" placeholder="Your Date of Birth *" name="birthday" value="" />
+                                      </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Student's Email *" name="email" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Student's Phone *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="Male">
+                                                    <span> Male </span>
+                                                </label>
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="Female">
+                                                    <span>Female </span>
+                                                </label>
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="Other">
+                                                    <span>Other </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        Interested Branches :
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="branch[]" value="CSE">
+                                            <label class="form-check-label" for="inlineCheckbox1">CSE</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="branch[]" value="ISE">
+                                            <label class="form-check-label" for="inlineCheckbox2">ISE</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="branch[]" value="ECE">
+                                            <label class="form-check-label" for="inlineCheckbox3">ECE</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="branch[]" value="MEC">
+                                            <label class="form-check-label" for="inlineCheckbox3">MECH</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="branch[]" value="PET">
+                                            <label class="form-check-label" for="inlineCheckbox3">PET</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="branch[]" value="CIV">
+                                            <label class="form-check-label" for="inlineCheckbox3">CIV</label>
+                                          </div>
+                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </form>
+
+
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3  class="register-heading">Apply as a Teacher</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                                <option>What is your Birthdate?</option>
+                                                <option>What is Your old Phone Number</option>
+                                                <option>What is your Pet Name?</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                                        </div>
+                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+{% endblock %}

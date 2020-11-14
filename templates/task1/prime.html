@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<h1 class="text-center">Prime Checker</h1><br>
+
+<form class="text-center" action="/primeend/" method="post">
+  {% csrf_token %}
+    Enter number : <input type="text"  name="num1"><br><br>
+  <input type="submit">
+</form>
+<br><br>
+<h3 class="text-center">Result : {{res}}</h3>
+
+{% endblock %}

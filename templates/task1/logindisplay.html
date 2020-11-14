@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="main-content bg-light py-4 mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>FORM OUTPUT</h2>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      {% csrf_token %}
+                                        <h4>{{fname}}</h4><br>
+                                        <h4>{{lname}}</h4><br>
+                                        <h4>{{mail}}</h4><br>
+                                        <h4>{{gen}}</h4><br>
+                                        <h4>{{city}}</h4><br>
+                                        <h4>{{country}}</h4><br>
+                                        <h4>{{pword}}</h4><br>
+                                        <h4>{{age}}</h4><br>
+                                        <h4>{{citizen}}</h4><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
