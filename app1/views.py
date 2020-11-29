@@ -4,6 +4,9 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'task1/a.html')
 
+def portfolio(request):
+    return render(request, 'task1/pfolio.html', {'extra':"MY GALLERY" ,'myname':"Euhid-Aman", 'mymail':'aman.why@mail.com', 'mynum':"0123456789", 'desc':"Hello-Everyone!!"})
+
 def login(request):
     return render(request, 'task1/login.html')
 

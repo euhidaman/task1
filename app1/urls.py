@@ -22,4 +22,5 @@ urlpatterns = [
     path('primeend/',views.prime_cal,name='prime_end'),
     path('collegesignup/',views.clgsignup,name='college_signup'),
     path('collegedisplay/',views.clgdisplay,name='college_display'),
+    path('portfolio/',views.portfolio,name='pfolio'),
 ]
